@@ -905,7 +905,7 @@ GameObject:
   - component: {fileID: 401752118}
   - component: {fileID: 401752117}
   m_Layer: 5
-  m_Name: choosecharacer
+  m_Name: Canvas for choosing pers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -985,8 +985,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 1957943427985022665}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5801,7 +5801,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7401288140623281374}
+      - m_Target: {fileID: 7301086215937606030}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -5943,8 +5943,9 @@ Transform:
   - {fileID: 228067811145381100}
   - {fileID: 5463365755331709925}
   - {fileID: 2734714071811487700}
+  - {fileID: 401752120}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &2008128919384072691
 RectTransform:
@@ -7159,7 +7160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1957943427985022665}
   m_Layer: 0
-  m_Name: chs
+  m_Name: Chossing character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8495,7 +8496,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 597298507061467899}
+      - m_Target: {fileID: 7401288140623281374}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -8872,7 +8873,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7401288140623281374}
+      - m_Target: {fileID: 597298507061467899}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
