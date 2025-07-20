@@ -7,6 +7,7 @@ public class chschr : MonoBehaviour
 
     private GameObject[] characters;
     private int index;
+    public string Scene;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +56,6 @@ public class chschr : MonoBehaviour
     public void StartScene()
     {
         PlayerPrefs.SetInt("hero", index);
-        SceneManager.LoadScene("gamescene");
+        SceneManager.LoadScene(Scene);
     }
 }
