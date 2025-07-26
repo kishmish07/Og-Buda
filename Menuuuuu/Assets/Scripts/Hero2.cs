@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hero : MonoBehaviour
+public class Hero2 : MonoBehaviour
 {
 
     public float moveSpeed = 5f;
@@ -15,6 +15,8 @@ public class Hero : MonoBehaviour
 
 
     public List<Skill> skills = new List<Skill>();
+    private animcontrol _animations;
+    [SerializeField] private SpriteRenderer _characterSprite;
     [SerializeField] private ContactFilter2D _platform;
     private bool _isOnPlatform => GetComponent<Rigidbody2D>().IsTouching(_platform);
 
@@ -23,12 +25,14 @@ public class Hero : MonoBehaviour
     {
         transform.position += Vector3.left * moveSpeed * Time.deltaTime;
         animator.SetBool("isMoving", true);
+
     }
 
     public void MoveRight()
     {
         transform.position += Vector3.right * moveSpeed * Time.deltaTime;
         animator.SetBool("isMoving", true);
+   
     }
 
     public void Jump()
@@ -57,20 +61,31 @@ public class Hero : MonoBehaviour
             skills[skillIndex].Use();
         }
     }
+    
+    private void Start()
+    {
+        _animations = GetComponentInChildren<animcontrol>();
+    }
 
 
 
     void Update()
-    {
+    {   
+        _animations.IsMoving = false;
         if (Input.GetKey(KeyCode.A))
         {
             MoveLeft();
+            _characterSprite.flipX = true;
+            _animations.IsMoving = true;
+
         }
         else if (Input.GetKey(KeyCode.D))
         {
             MoveRight();
+            _characterSprite.flipX = false;
+            _animations.IsMoving = true;
         }
-
+        _animations.IsMoving = false;
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
@@ -97,22 +112,3 @@ public class Hero : MonoBehaviour
 }
 
 
-public class Skill
-{
-    public string name;
-    public int cooldown;
-    public int damage;
-
-    public Skill(string name, int cooldown, int damage)
-    {
-        this.name = name;
-        this.cooldown = cooldown;
-        this.damage = damage;
-    }
-
-    public void Use()
-    {
-
-        UnityEngine.Debug.Log($"Used {name} skill");
-    }
-}
